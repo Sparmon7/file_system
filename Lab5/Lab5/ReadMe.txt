@@ -4,11 +4,6 @@ CSE 332S Lab5
 What this program does:
 This program simulates a command line with image and text files, as well as commands to interact with these files.
 
-How this work was split up:
-The work was initially done with all three of us together doing work whether it was in class or on our own time.
-Later, we began working individually on parts of it and meeting up after to figure out what was left.
-Notably, Garrett worked on debugging, Ethan worked on DisplayCommand, and Spencer worked on MacroCommand. It is difficult to list every individual contribution but overall, the work was shared evenly and fairly.
-
 Associated Files:
 This project has a bunch of different files, but they are split up primarily between command files, visitor files, parsing strategies, file types/systems, factories, and the main Lab5.cpp file.
 
@@ -18,13 +13,6 @@ This project should only ever return 1, which is an error value corresponding to
 Our additional MacroCommand:
 We created a MacroCommand that is a combination of cat and ds. It is called using cd and it allows you to use the cat command and the ds command. We built in the ability to use one (or both) of -a and -d in the cat and display commands respectively.
 We tested this command using a fake file, and then a real file with the following possibilites after the file name: -a, -a -d, -d, (nothing). Each worked as expected.
-
-
-Errors encountered:
-1. One error that we had to deal with was testing for the ds -m command. When coding it, we thought it worked when testing it ourselves but it was failing the unit tests. After some time looking through it, it became apparent we made a simple mistake with the manner in which our display visitor printed things out, since it went in the wrong order. This was an easy fix.
-2. Another error was with the cat -a command. It also failed the unit tests because we thought the only difference with the -a was that it printed out the contents before, not realizing it also appends instead of writing over it. 
-3. The final error we found was with forgetting to close files out of laziness. It made us fail many unit tests, so that was a tedious fix.
-
 
 Tests:
 The first test we ran was the unit tests, which all passed (eventually).
